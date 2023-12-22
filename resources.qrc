@@ -39,5 +39,10 @@
 <file alias="strings-zh-TW">resources/strings/strings-zh-TW.properties</file>
 <file alias="strings-zh-CN">resources/strings/strings-zh-CN.properties</file>
 <file alias="strings-ja-JP">resources/strings/strings-ja-JP.properties</file>
+<file alias="pokemon_ball1">resources/icons/pokemon_ball1.png</file>
+<file alias="pokemon_ball2">resources/icons/pokemon_ball2.png</file>
+<file alias="pokemon_ball3">resources/icons/pokemon_ball3.png</file>
+<file alias="pokemon_ball4">resources/icons/pokemon_ball4.png</file>
+<file alias="pokemon_ball5">resources/icons/pokemon_ball5.png</file>
 </qresource>
 </RCC>

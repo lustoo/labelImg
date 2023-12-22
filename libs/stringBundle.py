@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 if items were added in files in the resources/strings folder,
-then execute "pyrcc5 resources.qrc -o resources.py" in the root directory
+then execute "pyrcc5 resources.qrc -o  resources.py" in the root directory
 and execute "pyrcc5 ../resources.qrc -o resources.py" in the libs directory
 """
 import re
@@ -63,13 +63,16 @@ class StringBundle:
     def __load_bundle(self, path):
         PROP_SEPERATOR = '='
         f = QFile(path)
+        #print('-----------------',path)
         if f.exists():
             if f.open(QIODevice.ReadOnly | QFile.Text):
                 text = QTextStream(f)
                 text.setCodec("UTF-8")
 
             while not text.atEnd():
+                
                 line = ustr(text.readLine())
+                #print(line)
                 key_value = line.split(PROP_SEPERATOR)
                 key = key_value[0].strip()
                 value = PROP_SEPERATOR.join(key_value[1:]).strip().strip('"')

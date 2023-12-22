@@ -48,7 +48,13 @@ from libs.create_ml_io import JSON_EXT
 from libs.ustr import ustr
 from libs.hashableQListWidgetItem import HashableQListWidgetItem
 
+###
+from labelwindow import LabelWindow
 __appname__ = 'labelImg'
+
+
+
+    
 
 
 class WindowMixin(object):
@@ -72,6 +78,18 @@ class WindowMixin(object):
 
 class MainWindow(QMainWindow, WindowMixin):
     FIT_WINDOW, FIT_WIDTH, MANUAL_ZOOM = list(range(3))
+
+    '''
+    by lust1
+    '''
+    def show_label_change_window(self):
+        dir_path=os.path.dirname(self.file_path)
+        self.chile_Win = LabelWindow(dir_path)
+        #阻塞父窗口
+        self.chile_Win.setWindowModality(Qt.ApplicationModal)
+        self.chile_Win.show()
+        self.chile_Win.exec_()
+
 
     def __init__(self, default_filename=None, default_prefdef_class_file=None, default_save_dir=None):
         super(MainWindow, self).__init__()
@@ -379,6 +397,19 @@ class MainWindow(QMainWindow, WindowMixin):
         self.draw_squares_option.setChecked(settings.get(SETTING_DRAW_SQUARE, False))
         self.draw_squares_option.triggered.connect(self.toggle_draw_square)
 
+
+
+        '''
+        label_change
+        add by lust1
+        
+        '''
+        label_change = action(get_str('label_change'), self.show_label_change_window, None, 'pokemon_ball1', get_str('label_change'))
+        show_info_pro = action(get_str('info'), self.show_info_dialog_pro, None, 'pokemon_ball3', get_str('info'))
+
+
+        
+
         # Store actions for further handling.
         self.actions = Struct(save=save, save_format=save_format, saveAs=save_as, open=open, close=close, resetAll=reset_all, deleteImg=delete_image,
                               lineColor=color1, create=create, delete=delete, edit=edit, copy=copy,
@@ -406,8 +437,20 @@ class MainWindow(QMainWindow, WindowMixin):
             edit=self.menu(get_str('menu_edit')),
             view=self.menu(get_str('menu_view')),
             help=self.menu(get_str('menu_help')),
+            process=self.menu(get_str('menu_process')),
             recentFiles=QMenu(get_str('menu_openRecent')),
             labelList=label_menu)
+
+
+        '''
+        add actions
+        by lust1
+        '''
+        add_actions(self.menus.process, (None,label_change))
+
+
+
+
 
         # Auto saving : Enable auto saving if pressing next
         self.auto_saving = QAction(get_str('autoSaveMode'), self)
@@ -425,10 +468,10 @@ class MainWindow(QMainWindow, WindowMixin):
         self.display_label_option.setCheckable(True)
         self.display_label_option.setChecked(settings.get(SETTING_PAINT_LABEL, False))
         self.display_label_option.triggered.connect(self.toggle_paint_labels_option)
-
+        
         add_actions(self.menus.file,
                     (open, open_dir, change_save_dir, open_annotation, copy_prev_bounding, self.menus.recentFiles, save, save_format, save_as, close, reset_all, delete_image, quit))
-        add_actions(self.menus.help, (help_default, show_info, show_shortcut))
+        add_actions(self.menus.help, (help_default, show_info, show_shortcut,show_info_pro))
         add_actions(self.menus.view, (
             self.auto_saving,
             self.single_class_mode,
@@ -697,6 +740,14 @@ class MainWindow(QMainWindow, WindowMixin):
         from libs.__init__ import __version__
         msg = u'Name:{0} \nApp Version:{1} \n{2} '.format(__appname__, __version__, sys.version_info)
         QMessageBox.information(self, u'Information', msg)
+    
+
+    def show_info_dialog_pro(self):
+        from libs.__init__ import __version__
+        msg='v0.1'
+        #msg = u'Name:{0} \nApp Version:{1} \n{2} '.format(__appname__, __version__, sys.version_info)
+        QMessageBox.information(self, u'Information', msg)
+
 
     def show_shortcuts_dialog(self):
         self.show_tutorial_dialog(browser='default', link='https://github.com/tzutalin/labelImg#Hotkeys')
