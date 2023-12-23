@@ -44,5 +44,6 @@
 <file alias="pokemon_ball3">resources/icons/pokemon_ball3.png</file>
 <file alias="pokemon_ball4">resources/icons/pokemon_ball4.png</file>
 <file alias="pokemon_ball5">resources/icons/pokemon_ball5.png</file>
+<file alias="pkp">resources/icons/pkp.png</file>
 </qresource>
 </RCC>

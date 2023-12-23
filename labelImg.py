@@ -83,7 +83,9 @@ class MainWindow(QMainWindow, WindowMixin):
     by lust1
     '''
     def show_label_change_window(self):
-        dir_path=os.path.dirname(self.file_path)
+        dir_path=None
+        if self.file_path is not None:
+            dir_path=os.path.dirname(self.file_path)
         self.chile_Win = LabelWindow(dir_path)
         #阻塞父窗口
         self.chile_Win.setWindowModality(Qt.ApplicationModal)
@@ -1742,7 +1744,7 @@ def get_main_app(argv=None):
         argv = []
     app = QApplication(argv)
     app.setApplicationName(__appname__)
-    app.setWindowIcon(new_icon("app"))
+    app.setWindowIcon(new_icon("pkp"))
     # Tzutalin 201705+: Accept extra agruments to change predefined class file
     argparser = argparse.ArgumentParser()
     argparser.add_argument("image_dir", nargs="?")
