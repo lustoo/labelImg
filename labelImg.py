@@ -86,14 +86,12 @@ class MainWindow(QMainWindow, WindowMixin):
         dir_path=None
         if self.file_path is not None:
             dir_path=os.path.dirname(self.file_path)
-        self.chile_Win = LabelWindow(dir_path)
-
-        self.form2=QMainWindow()
-        self.chile_Win.setupUi(self.form2)
+        self.labelform=QMainWindow()
+        self.chile_Win = LabelWindow(self.labelform,dir_path)
+        #self.chile_Win.setupUi(self.form2)
         #阻塞父窗口
-        self.form2.setWindowModality(Qt.ApplicationModal)
-        #self.form2.setFixedSize()
-        self.form2.show()
+        self.labelform.setWindowModality(Qt.ApplicationModal)
+        self.labelform.show()
 
 
     def __init__(self, default_filename=None, default_prefdef_class_file=None, default_save_dir=None):
