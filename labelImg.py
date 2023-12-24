@@ -49,12 +49,12 @@ from libs.ustr import ustr
 from libs.hashableQListWidgetItem import HashableQListWidgetItem
 
 ###
-from labelwindow import LabelWindow
+from dev_windows import LabelWindow
 __appname__ = 'labelImg'
 
 
 
-    
+   
 
 
 class WindowMixin(object):
@@ -87,10 +87,13 @@ class MainWindow(QMainWindow, WindowMixin):
         if self.file_path is not None:
             dir_path=os.path.dirname(self.file_path)
         self.chile_Win = LabelWindow(dir_path)
+
+        self.form2=QMainWindow()
+        self.chile_Win.setupUi(self.form2)
         #阻塞父窗口
-        self.chile_Win.setWindowModality(Qt.ApplicationModal)
-        self.chile_Win.show()
-        self.chile_Win.exec_()
+        self.form2.setWindowModality(Qt.ApplicationModal)
+        #self.form2.setFixedSize()
+        self.form2.show()
 
 
     def __init__(self, default_filename=None, default_prefdef_class_file=None, default_save_dir=None):

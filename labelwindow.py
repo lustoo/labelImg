@@ -61,5 +61,5 @@ class LabelWindow(QDialog):
  
     def initUI(self):
         self.setWindowFlags(Qt.WindowCloseButtonHint)
-        self.setWindowTitle('标签')
+        self.setWindowTitle('标签22')
         self.resize(780, 650)
