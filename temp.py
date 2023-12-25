@@ -9,4 +9,11 @@ class B(A):
         super().__init__()
         print(self.a)
 
-b=B()
+
+dir={
+    'adsf':1,
+    'ddfd':45,
+    'kojahj':22
+}
+
+print(str(dir.keys())+','+str(dir.values()))

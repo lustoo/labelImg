@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\codes\labelImg\label_window.ui'
+# Form implementation generated from reading ui file 'd:\labelImg\label_window.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -61,17 +61,15 @@ class Ui_LabelWindow(object):
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_2)
         self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        self.comboBox = QtWidgets.QComboBox(self.horizontalLayoutWidget_2)
-        self.comboBox.setMinimumSize(QtCore.QSize(0, 0))
-        self.comboBox.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
-        self.comboBox.setObjectName("comboBox")
-        self.horizontalLayout_5.addWidget(self.comboBox)
+        self.line_toreplace = QtWidgets.QLineEdit(self.horizontalLayoutWidget_2)
+        self.line_toreplace.setObjectName("line_toreplace")
+        self.horizontalLayout_5.addWidget(self.line_toreplace)
         self.label_3 = QtWidgets.QLabel(self.horizontalLayoutWidget_2)
         self.label_3.setObjectName("label_3")
         self.horizontalLayout_5.addWidget(self.label_3)
-        self.lineEdit = QtWidgets.QLineEdit(self.horizontalLayoutWidget_2)
-        self.lineEdit.setObjectName("lineEdit")
-        self.horizontalLayout_5.addWidget(self.lineEdit)
+        self.line_replace = QtWidgets.QLineEdit(self.horizontalLayoutWidget_2)
+        self.line_replace.setObjectName("line_replace")
+        self.horizontalLayout_5.addWidget(self.line_replace)
         self.horizontalLayout_5.setStretch(0, 2)
         self.horizontalLayout_5.setStretch(1, 1)
         self.horizontalLayout_5.setStretch(2, 2)
@@ -142,7 +140,7 @@ class Ui_LabelWindow(object):
         self.label_4.setObjectName("label_4")
         LabelWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(LabelWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 521, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 521, 23))
         self.menubar.setObjectName("menubar")
         LabelWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(LabelWindow)

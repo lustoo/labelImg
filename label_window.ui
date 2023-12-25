@@ -149,17 +149,7 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="2,1,2">
      <item>
-      <widget class="QComboBox" name="comboBox">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="contextMenuPolicy">
-        <enum>Qt::DefaultContextMenu</enum>
-       </property>
-      </widget>
+      <widget class="QLineEdit" name="line_toreplace"/>
      </item>
      <item>
       <widget class="QLabel" name="label_3">
@@ -169,7 +159,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit"/>
+      <widget class="QLineEdit" name="line_replace"/>
      </item>
     </layout>
    </widget>
@@ -371,7 +361,7 @@
      <x>0</x>
      <y>0</y>
      <width>521</width>
-     <height>22</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>
