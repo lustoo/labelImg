@@ -1769,14 +1769,26 @@ def get_main_app(argv=None):
     return app, win
 
 
+class QSSLoader:
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def read_qss_file(qss_file_name):
+        with open(qss_file_name, 'r',  encoding='UTF-8') as file:
+            return file.read()
+
+
 def main():
-    from qt_material import apply_stylesheet
+    #from qt_material import apply_stylesheet
     import qdarkstyle
     """construct main app and run it"""
     app, _win = get_main_app(sys.argv)
-    # apply_stylesheet(app, theme='dark_teal.xml')
+    #apply_stylesheet(app, theme='light_cyan_500.xml')
     # #设置样式表
+    #app.setStyleSheet(QSSLoader.read_qss_file('MacOS.qss'))
     app.setStyleSheet(qdarkstyle.load_stylesheet(qt_api='pyqt5'))
+
     return app.exec_()
 
 if __name__ == '__main__':
