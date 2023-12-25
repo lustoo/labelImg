@@ -1,5 +1,4 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 from Ui_label_window import Ui_LabelWindow
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
@@ -26,7 +25,8 @@ class LabelWindow(Ui_LabelWindow):
             self.dir=dir_path
 
             #更新label
-            self.label_showpath.setText(self.dir)
+            showdir=self.get_showdir()
+            self.label_showpath.setText(showdir)
             self.label_showpath.repaint()
 
 
@@ -99,12 +99,23 @@ class LabelWindow(Ui_LabelWindow):
 
     #双击列表,填充标签到需要更改的框里
     def select_toreplace(self):
+        import pyperclip
         item = self.list_label.selectedItems()[0].text()
         item = item.split(' ')[-1]
         self.line_toreplace.setText(item)
+
+        pyperclip.copy(item)
         
         
-    
+    #省略过长路径
+    def get_showdir(self):
+        if len(self.dir)<43:
+            showdir=self.dir
+        else:
+            showdir='...'+self.dir[-40:]
+        return showdir
+        
+
 
     def openpath(self):
         dir = QtWidgets.QFileDialog.getExistingDirectory(None,"选择文件夹","")
@@ -116,7 +127,9 @@ class LabelWindow(Ui_LabelWindow):
         self.dir=dir
 
         #更新label
-        self.label_showpath.setText(self.dir)
+        showdir=self.get_showdir()
+        
+        self.label_showpath.setText(showdir)
         self.label_showpath.repaint()
         
         #设置悬停提示
@@ -136,6 +149,9 @@ class LabelWindow(Ui_LabelWindow):
         xml_dict={}
         
         files = os.listdir(self.dir)
+
+        #xml文件数量,统计了能打开的xml
+        all_xml=0
         for file in files:
             s=set()
             xml_path = os.path.join(self.dir, file)
@@ -145,6 +161,7 @@ class LabelWindow(Ui_LabelWindow):
 
             try:
                 xml = lxml.etree.parse(xml_path)
+                all_xml+=1
             except:
                 print("error load:", xml_path)
                 continue
@@ -176,16 +193,24 @@ class LabelWindow(Ui_LabelWindow):
 
         self.xml_dict=xml_dict
 
-        max_len_obj = max([len(str(x[1])) for x in self.label_dict])
+        #max_len_obj = max([len(str(x[1])) for x in self.label_dict])
 
-        max_len_xml = max([len(str(x)) for x in list(xml_dict.values())])
+        #max_len_xml = max([len(str(x)) for x in list(xml_dict.values())])
         
-        add=8
+        add=10
+
+        all_obj=str(sum(list(label_dict.values())))
+        all_xml=str(all_xml)
 
         #清空并展示列表
         self.list_label.clear()
 
-        self.list_label.addItem('{}  {}  {}'.format('文件数'.ljust(4),'目标数'.ljust(4),'标签'))
+        self.list_head.addItem('{}  {}  {}'.format('文件数'.ljust(7),'目标数'.ljust(7),'标签'))
+
+        line_all='{}  {}  {}'.format(all_xml.ljust(add),all_obj.ljust(add+1),str(len(self.label_dict)) )
+        
+        self.list_all.addItem(line_all)
+
 
         for _ in self.label_dict:
             k, v=_
@@ -193,7 +218,7 @@ class LabelWindow(Ui_LabelWindow):
             xml_count=str(xml_dict[k])
 
             #空格修正
-            line='{}  {}  {}'.format(xml_count.ljust(add+max_len_xml-len(xml_count)),v.ljust(add+max_len_obj-len(v)),k )
+            line='{}  {}  {}'.format(xml_count.ljust(add+len(all_xml)-len(xml_count)),v.ljust(add+len(all_obj)-len(v)),k )
             self.list_label.addItem(line)
             #self.list_num.addItem(str(v))
 
@@ -201,11 +226,6 @@ class LabelWindow(Ui_LabelWindow):
 
 
         
-
-        
-
-
-
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     MainWindow = QMainWindow()
