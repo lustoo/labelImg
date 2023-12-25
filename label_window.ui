@@ -32,110 +32,155 @@
    <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="Line" name="line">
+   <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>190</y>
-      <width>440</width>
-      <height>3</height>
+      <y>180</y>
+      <width>441</width>
+      <height>281</height>
      </rect>
     </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>170</y>
-      <width>54</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
-    </property>
-    <property name="text">
+    <property name="title">
      <string>统计</string>
     </property>
+    <widget class="QListWidget" name="list_head">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>261</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="list_label">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>50</y>
+       <width>261</width>
+       <height>191</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="list_all">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>240</y>
+       <width>261</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </widget>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>500</y>
-      <width>54</width>
-      <height>16</height>
+      <x>40</x>
+      <y>50</y>
+      <width>441</width>
+      <height>81</height>
      </rect>
     </property>
-    <property name="text">
+    <property name="title">
+     <string>路径</string>
+    </property>
+    <widget class="QPushButton" name="do_openpath">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>30</y>
+       <width>80</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>选择</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>261</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0">
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_showpath">
+        <property name="lineWidth">
+         <number>1</number>
+        </property>
+        <property name="text">
+         <string>请选择路径</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>510</y>
+      <width>441</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="title">
      <string>替换</string>
     </property>
    </widget>
-   <widget class="QListWidget" name="list_label">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>230</y>
-      <width>261</width>
-      <height>191</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="Line" name="line_2">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>520</y>
-      <width>440</width>
-      <height>3</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>80</y>
-      <width>251</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0">
-     <property name="bottomMargin">
-      <number>0</number>
-     </property>
-     <item>
-      <widget class="QLabel" name="label_showpath">
-       <property name="lineWidth">
-        <number>1</number>
-       </property>
-       <property name="text">
-        <string>请选择路径</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QPushButton" name="do_changelabel">
+   <widget class="QPushButton" name="do_cal">
     <property name="geometry">
      <rect>
       <x>370</x>
-      <y>540</y>
+      <y>210</y>
       <width>80</width>
       <height>30</height>
      </rect>
     </property>
     <property name="text">
-     <string>执行</string>
+     <string>统计</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="do_copy">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>260</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>复制</string>
     </property>
    </widget>
    <widget class="QWidget" name="horizontalLayoutWidget_2">
@@ -163,227 +208,17 @@
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="do_openpath">
+   <widget class="QPushButton" name="do_changelabel">
     <property name="geometry">
      <rect>
       <x>370</x>
-      <y>80</y>
+      <y>540</y>
       <width>80</width>
       <height>30</height>
      </rect>
     </property>
     <property name="text">
-     <string>选择</string>
-    </property>
-   </widget>
-   <widget class="Line" name="line_3">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>520</y>
-      <width>3</width>
-      <height>70</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-   </widget>
-   <widget class="Line" name="line_4">
-    <property name="geometry">
-     <rect>
-      <x>480</x>
-      <y>520</y>
-      <width>3</width>
-      <height>70</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-   </widget>
-   <widget class="Line" name="line_5">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>590</y>
-      <width>440</width>
-      <height>3</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="Line" name="line_6">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>460</y>
-      <width>440</width>
-      <height>3</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="Line" name="line_7">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>190</y>
-      <width>3</width>
-      <height>270</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-   </widget>
-   <widget class="Line" name="line_8">
-    <property name="geometry">
-     <rect>
-      <x>480</x>
-      <y>190</y>
-      <width>3</width>
-      <height>270</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="do_copy">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>260</y>
-      <width>80</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>复制</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="do_cal">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>210</y>
-      <width>80</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>统计</string>
-    </property>
-   </widget>
-   <widget class="Line" name="line_9">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>60</y>
-      <width>440</width>
-      <height>3</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="Line" name="line_10">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>130</y>
-      <width>440</width>
-      <height>3</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="Line" name="line_11">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>60</y>
-      <width>3</width>
-      <height>70</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-   </widget>
-   <widget class="Line" name="line_12">
-    <property name="geometry">
-     <rect>
-      <x>480</x>
-      <y>60</y>
-      <width>3</width>
-      <height>70</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>40</y>
-      <width>54</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
-    </property>
-    <property name="text">
-     <string>路径</string>
-    </property>
-   </widget>
-   <widget class="QListWidget" name="list_all">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>420</y>
-      <width>261</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-   </widget>
-   <widget class="QListWidget" name="list_head">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>210</y>
-      <width>261</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
+     <string>执行</string>
     </property>
    </widget>
   </widget>
