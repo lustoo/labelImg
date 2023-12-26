@@ -25,6 +25,11 @@
     <height>640</height>
    </size>
   </property>
+  <property name="font">
+   <font>
+    <family>Mongolian Baiti</family>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>标签</string>
   </property>
@@ -41,6 +46,11 @@
       <height>281</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Consolas</family>
+     </font>
+    </property>
     <property name="title">
      <string>统计</string>
     </property>
@@ -53,34 +63,40 @@
        <height>191</height>
       </rect>
      </property>
-    </widget>
-    <widget class="QLineEdit" name="list_head">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>30</y>
-       <width>261</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
+     <property name="font">
+      <font>
+       <family>Consolas</family>
+      </font>
      </property>
     </widget>
-    <widget class="QLineEdit" name="list_all">
+    <widget class="QListWidget" name="list_all">
      <property name="geometry">
       <rect>
        <x>30</x>
        <y>240</y>
        <width>261</width>
-       <height>20</height>
+       <height>31</height>
       </rect>
      </property>
-     <property name="readOnly">
-      <bool>true</bool>
+    </widget>
+    <widget class="QListWidget" name="list_head">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>261</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>240</y>
+       <width>261</width>
+       <height>31</height>
+      </rect>
      </property>
     </widget>
    </widget>
@@ -225,7 +241,7 @@
      <x>0</x>
      <y>0</y>
      <width>521</width>
-     <height>23</height>
+     <height>19</height>
     </rect>
    </property>
   </widget>
