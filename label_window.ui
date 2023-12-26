@@ -44,22 +44,6 @@
     <property name="title">
      <string>统计</string>
     </property>
-    <widget class="QListWidget" name="list_head">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>30</y>
-       <width>261</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-    </widget>
     <widget class="QListWidget" name="list_label">
      <property name="geometry">
       <rect>
@@ -70,20 +54,33 @@
       </rect>
      </property>
     </widget>
-    <widget class="QListWidget" name="list_all">
+    <widget class="QLineEdit" name="list_head">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>261</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="list_all">
      <property name="geometry">
       <rect>
        <x>30</x>
        <y>240</y>
        <width>261</width>
-       <height>21</height>
+       <height>20</height>
       </rect>
      </property>
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
+     <property name="readOnly">
+      <bool>true</bool>
      </property>
     </widget>
    </widget>

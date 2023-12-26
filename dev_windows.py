@@ -109,10 +109,10 @@ class LabelWindow(Ui_LabelWindow):
         
     #省略过长路径
     def get_showdir(self):
-        if len(self.dir)<43:
+        if len(self.dir)<42:
             showdir=self.dir
         else:
-            showdir='...'+self.dir[-40:]
+            showdir='...'+self.dir[-39:]
         return showdir
         
 
@@ -205,11 +205,11 @@ class LabelWindow(Ui_LabelWindow):
         #清空并展示列表
         self.list_label.clear()
 
-        self.list_head.addItem('{}  {}  {}'.format('文件数'.ljust(7),'目标数'.ljust(7),'标签'))
+        self.list_head.setText('{}  {}  {}'.format('文件数'.ljust(5),'目标数'.ljust(5),'标签'))
 
-        line_all='{}  {}  {}'.format(all_xml.ljust(add),all_obj.ljust(add+1),str(len(self.label_dict)) )
+        line_all='{}  {}  {}'.format(all_xml.ljust(add-2),all_obj.ljust(add+1-2),str(len(self.label_dict)) )
         
-        self.list_all.addItem(line_all)
+        self.list_all.setText(line_all)
 
 
         for _ in self.label_dict:
