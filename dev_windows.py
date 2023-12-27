@@ -36,7 +36,6 @@ class LabelWindow(Ui_LabelWindow):
         self.list_label.setFont(fixed_font)
         self.list_all.setFont(fixed_font)
         self.list_label.setFont(fixed_font)
-        self.lineEdit.setFont(fixed_font)
 
 
         self.do_openpath.clicked.connect(self.openpath)
@@ -206,7 +205,7 @@ class LabelWindow(Ui_LabelWindow):
 
         #max_len_xml = max([len(str(x)) for x in list(xml_dict.values())])
         
-        add=7
+        add=6
 
         all_obj=str(sum(list(label_dict.values())))
         all_xml=str(all_xml)
@@ -214,15 +213,14 @@ class LabelWindow(Ui_LabelWindow):
         #清空并展示列表
         self.list_label.clear()
 
-        self.list_head.addItem('{}{}{}'.format('文件数'.ljust(add-1),'目标数'.ljust(add-1),'标签'))
+        self.list_head.setText('{}{}{}'.format('文件'.ljust(add-2),'目标'.ljust(add-1),'标签'))
 
         #line_all='{}  {}  {}'.format(all_xml.ljust(add-2),all_obj.ljust(add+1-2),str(len(self.label_dict)) )
         line_all='{}{}{}'.format(all_xml.ljust(add),all_obj.ljust(add),str(len(self.label_dict)) )
         
 
         
-        self.list_all.addItem(line_all)
-        self.lineEdit.setText(line_all)
+        self.list_all.setText(line_all)
 
 
         for _ in self.label_dict:

@@ -9,17 +9,11 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>521</width>
-    <height>640</height>
+    <width>1343</width>
+    <height>919</height>
    </rect>
   </property>
   <property name="minimumSize">
-   <size>
-    <width>521</width>
-    <height>640</height>
-   </size>
-  </property>
-  <property name="maximumSize">
    <size>
     <width>521</width>
     <height>640</height>
@@ -41,9 +35,9 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>180</y>
+      <y>162</y>
       <width>441</width>
-      <height>281</height>
+      <height>371</height>
      </rect>
     </property>
     <property name="font">
@@ -58,9 +52,9 @@
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>50</y>
-       <width>261</width>
-       <height>191</height>
+       <y>61</y>
+       <width>281</width>
+       <height>251</height>
       </rect>
      </property>
      <property name="font">
@@ -69,32 +63,22 @@
       </font>
      </property>
     </widget>
-    <widget class="QListWidget" name="list_all">
+    <widget class="QLineEdit" name="list_all">
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>240</y>
-       <width>261</width>
+       <y>310</y>
+       <width>281</width>
        <height>31</height>
       </rect>
      </property>
     </widget>
-    <widget class="QListWidget" name="list_head">
+    <widget class="QLineEdit" name="list_head">
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>20</y>
-       <width>261</width>
-       <height>31</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>240</y>
-       <width>261</width>
+       <y>31</y>
+       <width>281</width>
        <height>31</height>
       </rect>
      </property>
@@ -107,7 +91,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>50</y>
+      <y>42</y>
       <width>441</width>
       <height>81</height>
      </rect>
@@ -118,7 +102,7 @@
     <widget class="QPushButton" name="do_openpath">
      <property name="geometry">
       <rect>
-       <x>330</x>
+       <x>340</x>
        <y>30</y>
        <width>80</width>
        <height>30</height>
@@ -133,7 +117,7 @@
       <rect>
        <x>30</x>
        <y>30</y>
-       <width>261</width>
+       <width>281</width>
        <height>31</height>
       </rect>
      </property>
@@ -158,7 +142,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>510</y>
+      <y>572</y>
       <width>441</width>
       <height>81</height>
      </rect>
@@ -170,8 +154,8 @@
    <widget class="QPushButton" name="do_cal">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>210</y>
+      <x>380</x>
+      <y>200</y>
       <width>80</width>
       <height>30</height>
      </rect>
@@ -186,8 +170,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>260</y>
+      <x>380</x>
+      <y>250</y>
       <width>80</width>
       <height>30</height>
      </rect>
@@ -200,8 +184,8 @@
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>540</y>
-      <width>261</width>
+      <y>600</y>
+      <width>281</width>
       <height>31</height>
      </rect>
     </property>
@@ -224,8 +208,8 @@
    <widget class="QPushButton" name="do_changelabel">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>540</y>
+      <x>380</x>
+      <y>600</y>
       <width>80</width>
       <height>30</height>
      </rect>
@@ -234,13 +218,23 @@
      <string>执行</string>
     </property>
    </widget>
+   <widget class="QTableView" name="tableView">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>50</y>
+      <width>800</width>
+      <height>800</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>521</width>
+     <width>1343</width>
      <height>19</height>
     </rect>
    </property>
