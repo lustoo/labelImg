@@ -11,6 +11,7 @@ import xml.etree.ElementTree as ET
 class LabelWindow(Ui_LabelWindow):
     def __init__(self,form=None,dir_path=None) -> None:
         super(LabelWindow,self).__init__()
+        #QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
 
         #setupUi中初始化父类组件
         self.setupUi(form)

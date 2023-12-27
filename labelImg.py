@@ -1780,13 +1780,11 @@ class QSSLoader:
 
 
 def main():
+
     #from qt_material import apply_stylesheet
     import qdarkstyle
     """construct main app and run it"""
     app, _win = get_main_app(sys.argv)
-    #apply_stylesheet(app, theme='light_cyan_500.xml')
-    # #设置样式表
-    #app.setStyleSheet(QSSLoader.read_qss_file('MacOS.qss'))
     app.setStyleSheet(qdarkstyle.load_stylesheet(qt_api='pyqt5'))
 
     return app.exec_()
